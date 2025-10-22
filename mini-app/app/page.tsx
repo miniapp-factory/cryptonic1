@@ -1,7 +1,35 @@
 import { description, title, url } from "@/lib/metadata";
 import { Metadata } from "next";
+import JobCard from "@/components/job-card";
 
 export const dynamic = "force-dynamic";
+
+const jobs = [
+  {
+    id: "1",
+    title: "Smart Contract Engineer",
+    company: "ChainForge",
+    location: "Remote",
+    description:
+      "Design, develop, and audit smart contracts for DeFi protocols.",
+  },
+  {
+    id: "2",
+    title: "Web3 Frontend Developer",
+    company: "MetaVerse Labs",
+    location: "Berlin, Germany",
+    description:
+      "Build responsive dApps using React, Next.js, and wagmi.",
+  },
+  {
+    id: "3",
+    title: "Blockchain Product Manager",
+    company: "TokenX",
+    location: "San Francisco, CA",
+    description:
+      "Lead product strategy for NFT marketplace and tokenomics.",
+  },
+];
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -33,9 +61,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-3 place-items-center px-4">
-      <span className="text-2xl">{title}</span>
-      <span className="text-muted-foreground">{description}</span>
+    <main className="flex flex-col gap-6 place-items-center px-4 py-8">
+      <h1 className="text-3xl font-bold">{title}</h1>
+      <p className="text-muted-foreground">{description}</p>
+      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full">
+        {jobs.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))}
+      </section>
     </main>
   );
 }
