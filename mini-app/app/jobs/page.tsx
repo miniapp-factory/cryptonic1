@@ -1,5 +1,6 @@
 import { title } from "@/lib/metadata";
 import JobCard from "@/components/job-card";
+import { Button } from "@/components/ui/button";
 
 const jobs = [
   {
@@ -37,6 +38,9 @@ export default function JobsPage() {
           <JobCard key={job.id} job={job} />
         ))}
       </section>
+      <Button asChild>
+        <a href="/jobs/new">Post Job</a>
+      </Button>
     </main>
   );
 }

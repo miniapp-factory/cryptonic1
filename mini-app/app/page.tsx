@@ -1,6 +1,7 @@
 import { description, title, url } from "@/lib/metadata";
 import { Metadata } from "next";
 import JobCard from "@/components/job-card";
+import { Button } from "@/components/ui/button";
 
 export const dynamic = "force-dynamic";
 
@@ -69,6 +70,9 @@ export default function Home() {
           <JobCard key={job.id} job={job} />
         ))}
       </section>
+      <Button asChild>
+        <a href="/jobs">View Jobs</a>
+      </Button>
     </main>
   );
 }

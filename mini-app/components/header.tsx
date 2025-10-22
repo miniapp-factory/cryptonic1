@@ -34,6 +34,10 @@ const pages = [
     label: <span className="text-lg">Jobs</span>,
     href: "/jobs",
   },
+  {
+    label: <span className="text-lg">Post Job</span>,
+    href: "/jobs/new",
+  },
 ];
 
 export function Header() {
@@ -54,7 +58,7 @@ export function Header() {
               <Menu />
             </DrawerTrigger>
             <DrawerContent>
-              <DrawerHeader className="hidden">
+              <DrawerHeader>
                 <DrawerTitle>Navigation Menu</DrawerTitle>
                 <DrawerDescription>Navigate to other pages</DrawerDescription>
               </DrawerHeader>

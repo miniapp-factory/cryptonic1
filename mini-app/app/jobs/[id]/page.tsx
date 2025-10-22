@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { title } from "@/lib/metadata";
 import JobCard from "@/components/job-card";
+import { Button } from "@/components/ui/button";
 
 const jobs = [
   {
@@ -40,6 +41,11 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
     <main className="flex flex-col gap-6 place-items-center px-4 py-8">
       <h1 className="text-3xl font-bold">{title} – Job Details</h1>
       <JobCard job={job} />
+      <Button asChild>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          Apply Now
+        </a>
+      </Button>
     </main>
   );
 }
